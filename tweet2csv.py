@@ -72,15 +72,12 @@ def main(query):
     outfile = open("output.csv","w")
     tweetwriter = csv.writer(outfile)
     # creating object of TwitterClient Class
-    print(1)
     api = TwitterClient()
-    print(2)
     # calling function to get tweets
     tweets = api.get_tweets(query = query, count = 200)
-    print(3,tweets)
     for x in tweets :
         tweetwriter.writerow([x['text']])
-    print(tweets[0]['text'])
+    #    print(tweets[0]['text'])
  
 if __name__ == "__main__":
     query=''
